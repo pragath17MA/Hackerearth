@@ -1,0 +1,32 @@
+import java.util.*;
+ 
+public class Main {
+    public static void main(String[] args) {
+ 
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+ 
+        while(t-- > 0){
+ 
+            int green = sc.nextInt();
+            int purple = sc.nextInt();
+ 
+            int n = sc.nextInt();
+ 
+            int p1 = 0, p2 = 0;
+ 
+            for(int i=0;i<n;i++){
+                int a = sc.nextInt();
+                int b = sc.nextInt();
+ 
+                if(a == 1) p1++;
+                if(b == 1) p2++;
+            }
+ 
+            int cost1 = p1 * green + p2 * purple;
+            int cost2 = p1 * purple + p2 * green;
+ 
+            System.out.println(Math.min(cost1, cost2));
+        }
+    }
+}
